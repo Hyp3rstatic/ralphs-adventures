@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+  <head>
+    <script src="./scripts/draw.js"></script>
+    <script src="./scripts/move.js"></script>
+    <script src="./scripts/image.js"></script>
+    <script src="./scripts/class.js"></script>
+    <script src="./scripts/var.js"></script>
+    <script src="./scripts/layout.js"></script>
+    <script src="./scripts/setup.js"></script>
+    <script src="./scripts/control.js"></script>
+  </head>
+
+  <body
+    id="main"
+    style="
+      background-image: url(&quot;space.jpeg&quot;);
+      height: 100%;
+      overflow-y: hidden;
+      border: 0px solid #000000;
+      padding-top: 50px;
+    "
+  >
+    <div style="display: none">
+      <audio controls autoplay id="gymnopedia">
+        <source src="sounds/gymnopedia.mpga" type="audio/mpeg" />
+      </audio>
+    </div>
+
+    <div id="game-container" style="text-align: center">
+      <canvas
+        id="game-canvas"
+        width="900"
+        height="600"
+        style="
+          border: 10px solid #000000;
+          background-image: linear-gradient(to right, #ebebeb, #bdd0e4);
+        "
+      ></canvas>
+    </div>
+
+    <script>
+      document.getElementById("gymnopedia").loop = true;
+      let scale = 50;
+      // overflow-y: hidden;
+      let gameCanvas = document.getElementById("game-canvas");
+      let game = gameCanvas.getContext("2d");
+      let playerImg = new Image();
+      playerImg.src = "images/ralph.png";
+      //playerImg.onload = function () {
+      //  game.drawImage(playerImg, player.x * 50, player.y * 50, 50, 50);
+      //};
+    </script>
+
+    <script src="./scripts/update.js"></script>
+  </body>
+</html>
